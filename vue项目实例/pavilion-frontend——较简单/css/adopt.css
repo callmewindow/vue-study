@@ -1,0 +1,117 @@
+.checkinput{
+    display: none;
+}
+div{
+    font-size: 3vh;
+}
+#bg{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 1;
+}
+#adopt{
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+#name{
+    width: 100%;
+    font-size: 4vh;
+    font-weight: bold;
+    text-align: center;
+}
+.checked{
+    float: left;
+    display: inline-block;
+    height: 4vh;
+    width: auto;
+    font-size: 3vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    padding: 1vh;
+}
+.checked_item{
+    background-color: #8be2ff;
+}
+#dateall{
+    width: 80vw;
+    height: 50vh;
+    margin-top: 2vh;
+    margin-left: 10vw;
+    position: absolute;
+    background-color: white;
+    border-radius: 3vh;
+    z-index: 2;
+}
+#date_title{
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+.date_one{
+    display: inline-block;
+    float: left;
+    width: 14vw;
+    font-size: 4vw;
+    text-align: center;
+    padding: 0.5vh;
+    margin-left: 2.9vw;
+    margin-top: 1.5vh;
+    border-radius: 1vh;
+    border: 2px solid black;
+}
+#timeall{
+    width: 90vw;
+    height: auto;
+    min-height: 60vh;
+    margin-top: 2vh;
+    margin-left: 5vw;
+    padding-bottom: 3vh;
+    position: absolute;
+    background-color: white;
+    border-radius: 3vh;
+    z-index: 2;
+}
+#time_title{
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+.time_one{
+    float: left;
+    width: 25vw;
+    font-size: 3.5vw;
+    line-height: 4.5vw;
+    text-align: center;
+    margin-top: 1vh;
+    margin-left: 2vw;
+    padding: 0.8vw;
+    padding-top: 0.5vh;
+    border: 1px solid black;
+}
+#group_input{
+    height: 3vh;
+    font-size: 2.5vh;
+}
+#send{
+    float: left;
+    width: 30vw;
+    height: 4vh;
+    font-size: 3vh;
+    text-align: center;
+    line-height: 4vh;
+    position: absolute;
+    margin-left: 35vw;
+    bottom: 10vh;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=width=device-width, user-scalable=no,
+          initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0"
+          >
+    <title>参观</title>
+    <script src = "../js/vue.js"></script>
+    <script src="../js/jQuery-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+<div id="visit">
+
+    <div class="full" id="refuse" v-show="status == -1">
+        <div class="title">该手环的参观服务已经关闭</div>
+    </div>
+
+    <div class="full" id="none" v-show="status == 0">
+        <div class="title">暂未进入展馆，赶紧进去参观吧</div>
+    </div>
+
+    <div class="full" id="enter" v-show="status == 1">
+        <div class="title">您当前处于{{name}}</div>
+        <div id="pavilion_img">
+            这是展馆的总览图
+        </div>
+        <div id="position_list" v-for="item,index in positions">
+            <div class="position_one">
+                时间：{{item.time}}<br>
+                行为：{{item.text}}
+            </div>
+        </div>
+    </div>
+
+    <div class="full" id="leave" v-show="status == 2">
+        <div class="title">感谢参观<br>以下是您本次参观的数据报表</div>
+        <div>
+
+        </div>
+    </div>
+
+</div>
+<link type="text/css" rel="stylesheet" href="../css/visit.css" />
+<script src = "../js/visit.js"></script>
+</body>
+</html>

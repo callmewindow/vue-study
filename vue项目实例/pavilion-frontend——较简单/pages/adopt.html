@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-model="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=width=device-width, user-scalable=no,
+          initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0"
+    >
+    <title>预约</title>
+    <script src = "../js/vue.js"></script>
+    <script src="../js/jQuery-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+<div id="adopt">
+    <div id="bg" v-if="bgShow" onclick="adopt.hideAll()"></div>
+    <form v-on:submit.prevent="onSubmit">
+
+        <div id="name">
+            {{name}}
+        </div>
+
+        <div class="checked" onclick="adopt.showDate()">
+            日期选择：{{date_checked}}
+        </div>
+        <div id="dateall" v-show="dateShow">
+            <span id="date_title">选择预约日期</span>
+            <div v-for="item,index in dates">
+                <div class="date_one"
+                     v-bind:class = "{checked_item :item.title == date_checked}"
+                     v-bind:id = " 'date' + index"
+                >
+                    <input class="checkinput" type="radio"
+                           v-bind:id="item.title"
+                           v-bind:value="item.title"
+                           v-model="date_checked">
+                    <label v-bind:for="item.title">
+                        {{item.title}}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="checked" onclick="adopt.showTime()">
+            时间段选择：{{time_checked}}
+        </div>
+        <div id="timeall" v-show="timeShow">
+            <span id="time_title">选择预约时间段</span>
+            <div v-for="item in times">
+                <div class="time_one" v-bind:class = "{checked_item :item.title == time_checked}" >
+                    <input class="checkinput" type="radio"
+                           v-bind:id="item.title"
+                           v-bind:value="item.title"
+                           v-model="time_checked">
+                    <label v-bind:for="item.title">
+                        {{item.title}}<br>
+                        预约上限：{{item.max}}<br>
+                        剩余人数：{{item.now}}<br>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="group" class="checked">
+            <span>团队人数：</span>
+            <input id="group_input" v-model.number="groupnum" type="number" placeholder="请输入团队总人数">
+        </div>
+
+        <div id="send" onclick="adopt.submit()">进行预约</div>
+
+    </form>
+</div>
+<link type="text/css" rel="stylesheet" href="../css/adopt.css" />
+<script src = "../js/adopt.js"></script>
+</body>
+</html>
